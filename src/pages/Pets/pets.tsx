@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom"
+
 import { Header } from "../../components/common/Header"
 import { Grid } from "../../components/layout/Grid"
 import styles from './Pets.module.css'
+import { Card } from "../../components/common/Card/Card"
+
+import Skeleton from "react-loading-skeleton"
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 export function Pets() {
@@ -10,7 +14,11 @@ export function Pets() {
             <div className={styles.container}>
 
                 <Header />
-                <Link to="/pets/20">Ir para listagem</Link>
+                <main className={styles.list}>
+                <Skeleton count={5}
+                containerClassName={styles.skeleton} />
+                   
+                </main>
             </div>
         </Grid>
     )
